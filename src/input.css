@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+@layer base {
+     .bg-pattern {
+          background:hsl(230, 100%, 99%) url('../images/bg-pattern.svg');
+          background-repeat: no-repeat;
+          background-position: top;
+          background-size:100% 55%;
+     }
+
+     .bg-circle-pattern {
+          background-image: url('../images/pattern-circles.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size:contain;
+     }
+}
+
+#toggler:checked + label::before {
+     left: 20px;
+}
+
+#toggler:checked + label{
+     background-color: hsl(174, 77%, 80%);
+}
+
+#slider.dragged ,
+#slider-mobile.dragged {
+     background-color: darkcyan;
+}
+
+#slider svg g,
+#slider-mobile svg g{
+     --svg-color: #80FFF3;
+}
+
+#slider:hover svg g,
+#slider-mobile:hover svg g {
+     --svg-color: #FFF;
+}
+
+.empty.opac {
+     opacity: 0.5;
+}

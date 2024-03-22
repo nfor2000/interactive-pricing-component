@@ -6,35 +6,87 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- displays site properly based on user's device -->
 
-     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
      <title>Frontend Mentor | Interactive pricing component</title>
+     <!-- Google font Monrope link-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
+     <!--Custom css link-->
      <link rel="stylesheet" href="./assets/css/main.css">
+     <!--Custom js file-->
+     <script defer src="./assets/js/script.js"></script>
 </head>
 
-<body>
-     <h1 class="text-1xl">Hello</h1>
+<body class="min-h-screen bg-pattern flex">
+     <main class="max-w-4xl m-auto px-2">
+          <div class="text-center py-5 bg-circle-pattern h-28 mb-14 px-[10px] sm:px-10 ">
+               <h1 class="mb-3 font-bold text-xl sm:text-3xl text-dark-blue">Simple, traffic-based pricing</h1>
+               <h2 class="text-sm font-semibold text-gray-blue">Sign-up for our 30-day trial. No credit card required.</h2>
+          </div>
+          <div class="bg-white py-10 flex flex-col gap-[25px] rounded-md shadow-xl">
+               <div class="flex flex-col gap-8 justify-between items-center px-[10px] sm:px-10  sm:flex-row">
+                    <h2 class="sm:text-sm text-xl uppercase text-gray-blue font-bold" id="pageviews">100k Pageviews</h2>
+                   
+                    <div class="sm:flex items-center gap-1 hidden">
+                         <h2 class="text-dark-blue text-4xl sm:text-3xl font-bold" id="billing">$16.00</h2>
+                         <h3 class="text-sm text-gray-blue font-bold" id="plan">/month</h3>
+                    </div>
+               </div>
+               <div class="px-[30px] sm:px-10  ">
+                    <div class="h-[6px] bg-light-gray-blue rounded-[4px] relative">
+                         <div class="h-full bg-soft-cryan w-0 rounded-[4px] relative" id="progress-bar">
+                         </div>
+                         <div class="empty w-[40px] h-[40px] rounded-full  items-center justify-center absolute left-[-20px] transform -translate-y-1/2 top-1/2" data-index="0">
+                              <div draggable="true" class="bg-strong-cryan hover:bg-soft-cryan w-[40px] h-[40px] rounded-full flex items-center justify-center absolute left-0 transform -translate-y-1/2 top-1/2 shadow-soft-cryan shadow-xl" id="slider">
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="13"><g fill="var(--svg-color)" fill-rule="evenodd"><path d="M16 2.558v7.884a1 1 0 001.735.679l3.639-3.943a1 1 0 000-1.356l-3.64-3.943A1 1 0 0016 2.558zM6 2.558v7.884a1 1 0 01-1.735.679L.626 7.178a1 1 0 010-1.356l3.64-3.943A1 1 0 016 2.558z"/></g></svg>
+                              </div>
 
-     Simple, traffic-based pricing
-     Sign-up for our 30-day trial. No credit card required.
+                         </div>
+                         <div class="empty w-[40px] h-[40px] rounded-full  items-center justify-center absolute  left-1/4 -translate-x-5 transform -translate-y-1/2 top-1/2" data-index="1"></div>
+                         <div class="empty w-[40px] h-[40px] rounded-full items-center justify-center absolute right-[-20px] left-1/2 -translate-x-1/2 transform -translate-y-1/2 top-1/2" data-index="2"></div>
 
-     Pageviews
-     $ /month
+                         <div class="empty w-[40px] h-[40px] rounded-full items-center justify-center absolute -translate-x-5 left-3/4 transform -translate-y-1/2 top-1/2" data-index="3"></div>
+                         <div class="empty w-[40px] h-[40px] rounded-full flex items-center justify-center absolute right-[-20px] transform -translate-y-1/2 top-1/2"data-index="4"></div>
+                    </div>
+                    <div class="flex justify-center items-center gap-1 sm:hidden p-5">
+                         <h2 class="text-dark-blue text-4xl sm:text-3xl font-bold" id="billing-mobile">$16.00</h2>
+                         <h3 class="text-sm text-gray-blue font-bold" id="plan-mobile">/month</h3>
+                    </div>
+               </div>
+               <div class="flex items-center justify-center p-4">
+                    <h4 class="text-[12px] text-gray-blue font-bold mr-[10px]">Monthly Billing</h4>
+                    <input class="w-0 invisible checked:" type="checkbox" name="" id="toggler">
+                    <label class="indent-[-9999px] w-[40px] bg-pale-blue hover:bg-soft-cryan cursor-pointer h-6 rounded-[20px] relative before:content-[''] before:absolute before:bg-white before:h-4 before:w-4 before:left-[4px] before:rounded-full before:transform before:-translate-y-1/2 before:top-1/2 before:transition-all duration-300" for="toggler">toggle</label>
+                    <h4 class="text-[12px] text-gray-blue font-bold ml-2 relative ">Yearly Billing 
+                         <p class="absolute  text-light-red bg-light-gray-red left-full transform translate-x-2 -translate-y-1/2 top-1/2 rounded-xl text-[10px] px-2 py-1 w-max text-nowrap">-25% <span class="hidden sm:inline-block">discounts</span></p>
+                    </h4>
+               </div>
+               <hr class="border-t border-0 border-light-gray-blue">
+               <div class="flex flex-col items-center sm:flex-row sm:justify-between px-[10px] sm:px-10  gap-5">
+                    <ul class="list-none">
+                         <li class="flex items-center gap-2 justify-center sm:justify-start">
+                              <img src="./assets/images/icon-check.svg" class="w-[10px]" alt="">
+                              <span class="text-sm text-gray-blue font-bold">Unlimited websites</span>
+                         </li>
+                         <li class="flex items-center gap-2 justify-center sm:justify-start">
+                              <img src="./assets/images/icon-check.svg" class="w-[10px]" alt="">
+                              <span class="text-sm text-gray-blue font-bold">100% data ownership</span>
+                         </li>
+                         <li class="flex items-center gap-2 justify-center sm:justify-start">
+                              <img src="./assets/images/icon-check.svg" class="w-[10px]" alt="">
+                              <span class="text-sm text-gray-blue font-bold">Email reports</span>
+                         </li>
+                    </ul>
 
-     Monthly Billing
-     Yearly Billing 25% discount
-
-     Unlimited websites
-     100% data ownership
-     Email reports
-
-     Start my trial
-
-     <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-          Coded by <a href="#">Your Name Here</a>.
-     </div>
+                    <button class="text-sm px-[10px] sm:px-10  w-max text-light-gray-blue bg-dark-blue py-2 rounded-3xl font-bold">Start my trial</button>
+               </div>
+           
+          </div>
+     </main>
+     
 </body>
 
 </html>
